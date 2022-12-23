@@ -142,34 +142,34 @@ install_x-ui() {
     chmod +x /usr/local/x-ui/x-ui.sh
     chmod +x /usr/bin/x-ui
     config_after_install
-    #echo -e "如果是全新安装，默认网页端口为 ${green}54321${plain}，用户名和密码默认都是 ${green}admin${plain}"
-    #echo -e "请自行确保此端口没有被其他程序占用，${yellow}并且确保 54321 端口已放行${plain}"
-    #    echo -e "若想将 54321 修改为其它端口，输入 x-ui 命令进行修改，同样也要确保你修改的端口也是放行的"
+    #echo -e "If it is a new installation, the default web port is ${green}54321${plain}, and the default username and password are ${green}admin${plain}"
+    #echo -e "Please ensure that this port is not occupied by other programs, ${yellow} and ensure that port 54321 has been released ${plain}"
+    # echo -e "If you want to modify 54321 to another port, enter the x-ui command to modify, and also make sure that the port you modified is also allowed"
     #echo -e ""
-    #echo -e "如果是更新面板，则按你之前的方式访问面板"
+    #echo -e "If updating the panel, access the panel as you did before"
     #echo -e ""
     systemctl daemon-reload
     systemctl enable x-ui
     systemctl start x-ui
-    echo -e "${green}x-ui v${last_version}${plain} 安装完成，面板已启动，"
+    echo -e "${green}x-ui v${last_version}${plain} installed, panel started,"
     echo -e ""
-    echo -e "x-ui 管理脚本使用方法: "
+    echo -e "How to use x-ui management script: "
     echo -e "----------------------------------------------"
-    echo -e "x-ui              - 显示管理菜单 (功能更多)"
-    echo -e "x-ui start        - 启动 x-ui 面板"
-    echo -e "x-ui stop         - 停止 x-ui 面板"
-    echo -e "x-ui restart      - 重启 x-ui 面板"
-    echo -e "x-ui status       - 查看 x-ui 状态"
-    echo -e "x-ui enable       - 设置 x-ui 开机自启"
-    echo -e "x-ui disable      - 取消 x-ui 开机自启"
-    echo -e "x-ui log          - 查看 x-ui 日志"
-    echo -e "x-ui v2-ui        - 迁移本机器的 v2-ui 账号数据至 x-ui"
-    echo -e "x-ui update       - 更新 x-ui 面板"
-    echo -e "x-ui install      - 安装 x-ui 面板"
-    echo -e "x-ui uninstall    - 卸载 x-ui 面板"
+    echo -e "x-ui - show admin menu (more features)"
+    echo -e "x-ui start - start x-ui panel"
+    echo -e "x-ui stop - stop x-ui panel"
+    echo -e "x-ui restart - restart x-ui panel"
+    echo -e "x-ui status - view x-ui status"
+    echo -e "x-ui enable - set x-ui to boot automatically"
+    echo -e "x-ui disable - cancel x-ui boot automatically"
+    echo -e "x-ui log - view x-ui log"
+    echo -e "x-ui v2-ui - migrate the v2-ui account data of this machine to x-ui"
+    echo -e "x-ui update - update x-ui panel"
+    echo -e "x-ui install - install x-ui panel"
+    echo -e "x-ui uninstall - uninstall x-ui panel"
     echo -e "----------------------------------------------"
 }
 
-echo -e "${green}开始安装${plain}"
+echo -e "${green} starts installing ${plain}"
 install_base
 install_x-ui $1
